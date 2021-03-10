@@ -13,5 +13,30 @@
 {% endblock %}
 
 {% block content %}
+<div class="mb-4">
+  <a href="{% url 'new_topic' board.pk %}" class="btn btn-primary">New Topic</a>
+</div>
 
+<table class="table">
+  <thead class="thead-inverse bg-success text-light">
+    <tr>
+      <th>Topic</th>
+      <th>Starter</th>
+      <th>Replies</th>
+      <th>Views</th>
+      <th>Last Update</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for topic in board.topics.all %}
+    <tr>
+      <th class="font-weight-normal">{{ topic.subject }}</th>
+      <th class="font-weight-normal">{{ topic.starter.username }}</th>
+      <th class="font-weight-normal">0</th>
+      <th class="font-weight-normal">0</th>
+      <th class="font-weight-normal">{{ topic.last_updated }}</th>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
