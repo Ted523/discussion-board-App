@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks', 
-    'boards',
+    'boards.apps.BoardsConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
