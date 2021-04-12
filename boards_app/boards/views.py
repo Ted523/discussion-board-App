@@ -1,7 +1,9 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User 
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import NewTopicForm
 from .models import Board, Topic, Post
+from django.http import HttpResponse
+
 
 
 
@@ -40,3 +42,5 @@ def new_topic(request, pk):
 	else:
 		form = NewTopicForm()
 	return render(request, 'new_topic.html', {'board': board, 'form': form})
+
+
